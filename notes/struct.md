@@ -97,4 +97,33 @@ let anon = Employee()
 ## Static properties and methods
 - adding methods and properties to struct itself but not instances.
 
+- Mix and match static and non-static rules:
+    - you **can't** access non-static from static
+    - you **can** access static from non-static
 
+- `self` vs `Self`
+    -  `self` is the current **value** of a struct
+    - `Self` is the current **type** of a struct
+
+- useful for storing common functionality you use across an entire app.
+- sample data showcase
+    ```
+    struct Employee{
+    let username: String
+    let password: String
+    
+    static let example = Employee(username:"cfederighti",password:"hdfk3nfds")
+    }
+
+    Employee.example 
+    ```
+---
+# Summary
+1. struct can have their own properties and methods
+2. if a method modifies properties of its struct, it must be mutating
+3. structs can have stored properties and computed properties
+4. We can attach `didSet` and `willSet` property observers to properties
+5. Swift generates an initializer for all structs using their property names.
+6. You can create custom initializers `init` to override default.
+7. access control limits what code can use properties and methods.
+8. Static properties and methods are attached directly to a struct.

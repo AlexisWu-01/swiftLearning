@@ -147,5 +147,54 @@ struct School1{
     }
 }
 
-School1.add(student:"Mani Fok")
-print(School1.StudentCount)
+//School1.add(student:"Mani Fok")
+//print(School1.StudentCount)
+
+struct AppData{
+    static let version = "1.3 beta 2"
+    static let saveFilename = "setting.json"
+    static let homeURL = "https://alexiswuprojects.wordpress.com"
+}
+
+AppData.version
+
+
+struct Employee1{
+    let username: String
+    let password: String
+    
+    static let example = Employee1(username:"cfederighti",password:"hdfk3nfds")
+}
+
+Employee1.example
+
+"""
+Check point
+ create a struct to store information about a car, including its model, number of seats, and current gear, then add a method to change gears up or down.
+"""
+
+struct carInfo{
+    private let model: String
+    let seatNumber : Int
+    var currentGear : Int
+    
+    init(model: String = "model x", seatNumber:Int=5, currentGear:Int=0){
+        self.model = model
+        self.seatNumber = seatNumber
+        self.currentGear = currentGear
+    }
+    
+    mutating func gearChange(up: Bool){
+        if up && currentGear < 5{
+            currentGear += 1
+        }
+        else if !up && currentGear > 0{
+            currentGear -= 1
+        }else{
+            print("You can't switch gear in this way!")
+        }
+    }
+}
+
+ var tesla = carInfo()
+tesla.currentGear
